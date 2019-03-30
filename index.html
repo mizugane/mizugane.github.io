@@ -34,9 +34,9 @@
         }
         h3{
             background-color:#222222;
-            width:85%;
+            width:98%;
             padding:3px 0px 3px 8px;
-            margin:0px 0px 5px;
+            margin:0px 0px 10px;
             border-left:solid 5px #cc0000;
             border-radius:0px 30px 0px 0px;
         }
@@ -58,13 +58,17 @@
             border:solid 1px #cccccc;
             border-radius:5px;
         }
+        ol{
+            margin:0px 0px 0px 30px;
+            padding:0px;
+        }
         </style>
     </head>
     <body>
         <h2>リパーシェ化ブックマークレット</h2>
         <div id="content">
             カクヨムの「<a href="https://kakuyomu.jp/works/1177354054883808252" target="_blank">異世界転生したけど日本語が通じなかった</a>」で半角英数字などをリパーシェフォントに変更するブックマークレットです。<br>
-            具体的には [ a～z , A～Z , 0～9 , ! , # , $ , & , ' , + , - , = , ? , @ , \ ] が対象です。<br>
+            具体的には 【 a～z , A～Z , 0～9 , ! , # , $ , & , ' , + , - , = , ? , @ , \ 】 が対象です。<br>
             <img src="./liparxeBeforeAfter.png"><br>
             本文のみに適用: <input type="text" value="javascript:(function(){var css = document.createElement(&quot;style&quot;);document.head.appendChild(css);css.textContent = '@font-face{font-family:&quot;Cilcir&quot;; src:url(&quot;https://mizugane.github.io/font/Cilkurleen_Cirlxarli_E.woff&quot;) format(&quot;woff&quot;);unicode-range:U+0021,U+0023-0024,U+0026-0027,U+002B,U+002D,U+0030-0039,U+003D,U+003F-0051,U+0053-005A,U+005C,U+0061-007A;} @font-face{font-family:&quot;Cirlipa&quot;; src:url(&quot;https://mizugane.github.io/font/cirlxarli_liparxe_1.woff&quot;) format(&quot;woff&quot;);unicode-range:U+0052;} @font-face {font-family: &quot;Yu Mincho&quot;;src: local(&quot;Yu Mincho Regular&quot;);unicode-range:U+0022-0026,U+0028-002A,U+002C,U+002E-002F,U+003A-003C,U+003E,U+005B,U+005D-0060,U+007F-FFFF;} @font-face {font-family: Hiragino Mincho ProN;src: local(&quot;Hiragino Mincho ProN&quot;);unicode-range:U+0022,U+0025,U+0028-002F,U+007F-FFFF;} .widget-episodeBody{font-family:&quot;Cilcir&quot;,&quot;Cirlipa&quot;,&quot;Yu Mincho&quot;,&quot;Hiragino Mincho ProN&quot;;}';})();" onfocus="this.select();" size="10"> ← コピーして使ってね<br>
             ページ全体に適用:<input type="text" value="javascript:(function(){var css = document.createElement(&quot;style&quot;);document.head.appendChild(css);css.textContent = '@font-face{font-family:&quot;Cilcir&quot;; src:url(&quot;https://mizugane.github.io/font/Cilkurleen_Cirlxarli_E.woff&quot;) format(&quot;woff&quot;);unicode-range:U+0021,U+0023-0024,U+0026-0027,U+002B,U+002D,U+0030-0039,U+003D,U+003F-0051,U+0053-005A,U+005C,U+0061-007A;} @font-face{font-family:&quot;Cirlipa&quot;; src:url(&quot;https://mizugane.github.io/font/cirlxarli_liparxe_1.woff&quot;) format(&quot;woff&quot;);unicode-range:U+0052;} @font-face {font-family: &quot;Yu Mincho&quot;;src: local(&quot;Yu Mincho Regular&quot;);unicode-range:U+0022-0026,U+0028-002A,U+002C,U+002E-002F,U+003A-003C,U+003E,U+005B,U+005D-0060,U+007F-FFFF;} @font-face {font-family: Hiragino Mincho ProN;src: local(&quot;Hiragino Mincho ProN&quot;);unicode-range:U+0022,U+0025,U+0028-002F,U+007F-FFFF;} html,body,.widget-episodeBody{font-family:&quot;Cilcir&quot;,&quot;Cirlipa&quot;,&quot;Yu Mincho&quot;,&quot;Hiragino Mincho ProN&quot;;}';})();" onfocus="this.select();" size="10"> ← コピーして使ってね<br>
@@ -76,15 +80,17 @@
             <br>
             <h3>ブックマークレットってなんぞ？</h3>
             ブックマークレットとは、ブラウザのブックマーク（お気に入り）に保存して利用するプログラムで、本来のサイトの機能とは別にユーザー側で使う物です。<br>
-            Javascriptで記述されているので、サイト運営側には負担がかからず、ユーザーの端末で勝手に機能するだけなので特に心配は要らないと思いますよ。多分。<br>
+            Javascriptで記述されているのでサイト運営側には負担がかからず、ユーザーの端末で勝手に機能するだけですので特に心配する事はないですよ。多分。<br>
             <s style="font-size:18px;">ただし無限アラートを使うと兵庫県警に捕まるかもしれない</s><br>
             <br>
             <h3>使い方</h3>
-            ①まず↑の javascript:(function(){…… をどちらか片方コピーしてください。<br>
-            ②適当なサイトをブックマークします。（一時的なものなのでどこでも大丈夫、このサイトでOK）<br>
-            ③登録したブックマークを編集し、URLの部分に先ほどコピーしたスクリプトを上書きし、名前も分かりやすい物に変更します。<br>
-            ④これで準備は完了です。 あとはカクヨムいせにほでそのブックマークを開くとプログラムが作動します。<br>
-            ⑤ページを更新・移動すると元に戻ります。次のページに行くたびに使う必要があります。<br>
+            <ol>
+                <li>まず↑の javascript:(function(){…… をどちらか片方コピーしてください。</li>
+                <li>適当なサイトをブックマークします。（一時的なものなのでどこでも大丈夫、このサイトでOK）</li>
+                <li>登録したブックマークを編集し、URLの部分に先ほどコピーしたスクリプトを上書きし、名前も分かりやすい物に変更します。</li>
+                <li>これで準備は完了です。 あとはカクヨムいせにほでそのブックマークを開くとプログラムが作動します。</li>
+                <li>ページを更新・移動すると元に戻ります。次のページに行くたびに使う必要があります。</li>
+            </ol>
             <br>
             <h3>フォントについて</h3>
             このブックマークレットで使われているフォントは<a href="https://github.com/sozysozbot/fonts" target="_blank">ここ</a>の「Cilkurleen_Cirlxarli_E.woff」です。<br>
@@ -93,8 +99,8 @@
             それぞれWindowsとiOSに標準搭載されているフォント。<br>
             <br>
             <h3>他</h3>
-            作った人:<span style="font-family:'Cilcir';">fixa siertija cedonija</span> (<a href="https://twitter.com/Mizugane_SNG">Twitter</a>)<br>
-            コード改変はご自由にどうぞ。 何かあったらTwitterまでどうぞ。<br>
+            作った人 : <span style="font-family:'Cilcir';"><ruby>fixa<rt>フィシャ</rt> siertija<rt>ズェーティヤ</rt> cedonija<rt>セドニヤ</rt></ruby></span> (<a href="https://twitter.com/Mizugane_SNG" target="_blank">Twitter</a>)<br>
+            コード改変はご自由にどうぞ。<br>
             <br>
             なんで背景が黒いのかって？目に優しいからです。フェリーサ。<br>
         </div>
